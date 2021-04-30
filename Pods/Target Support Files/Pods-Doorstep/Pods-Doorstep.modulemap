@@ -1,0 +1,6 @@
+framework module Pods_Doorstep {
+  umbrella header "Pods-Doorstep-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -11,19 +11,23 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
+    @IBOutlet weak var registerView: UIView!
+    
     @IBOutlet weak var loginView: UIView!
     
-    @IBOutlet weak var registerView: UIView!
+    
     
     @IBAction func indexChanged(_ sender: Any) {
         
         switch segmentedControl.selectedSegmentIndex
             {
         
-//            case 0:
-//                textLabel.text = "First Segment Selected"
-//            case 1:
-//                textLabel.text = "Second Segment Selected"
+            case 0:
+                loginView.isHidden = false
+                registerView.isHidden = true
+            case 1:
+                registerView.isHidden = false
+                loginView.isHidden = true
             default:
                 break
             }
@@ -32,6 +36,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        registerView.isHidden=true
+        loginView.isHidden=false
     }
 
     
