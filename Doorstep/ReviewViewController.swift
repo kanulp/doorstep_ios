@@ -11,11 +11,12 @@ import Firebase
 class ReviewViewController: UIViewController {
 
     
+    @IBOutlet weak var reviewTitle: UITextField!
     
+    @IBOutlet weak var reviewText: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        FirebaseApp.configure()
-
+        
         // Do any additional setup after loading the view.
     }
     
@@ -26,15 +27,15 @@ class ReviewViewController: UIViewController {
         
         var ref: DocumentReference? = nil
         ref = db.collection("reviews").addDocument(data: [
-            "review": "review",
-            "title": "Title",
+            "review": "\(reviewText.text ?? "review")",
+            "title": "\(reviewTitle.text ?? "title")",
             "user": "karangajjar.lp@gmail.com"
         ]) { err in
             if let err = err {
                 print("Error adding document: \(err)")
             } else {
                 print("Document added with ID: \(ref!.documentID)")
-                let thanks = storyboard?.instantiateViewController(withIdentifier: "ThankYouViewController") as! ThankYouViewController
+                let thanks = self.storyboard?.instantiateViewController(withIdentifier: "ThankYouViewController") as! ThankYouViewController
                 self.navigationController?.pushViewController(thanks, animated: true)
             }
         }

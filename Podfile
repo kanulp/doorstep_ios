@@ -9,10 +9,10 @@ target 'Doorstep' do
   #Optionally, include the Swift extensions if you're using Swift.
   #pod 'FirebaseFirestoreSwift'
  	 # Pods for Doorstep
-  	pod 'Firebase/Firestore'
+  pod 'Firebase/Firestore'
 
 	# Optionally, include the Swift extensions if you're using Swift.
-	pod 'FirebaseFirestoreSwift'
+	#pod 'FirebaseFirestoreSwift'
   target 'DoorstepTests' do
     inherit! :search_paths
     # Pods for testing
